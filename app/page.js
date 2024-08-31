@@ -5,6 +5,7 @@ import AnimatedText from "./PageSections/FirstFold/AnimatedText";
 import Navbar from "./PageSections/Navbar/Navbar";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 const slideFromBottomVariants = {
   hidden: {
@@ -225,7 +226,9 @@ export default function Home() {
               exit="exit"
               variants={cardVariants}>
               <div className="h-[212px] w-[212px] rounded-xl relative">
-                <img
+                <Image
+                  height={212}
+                  width={212}
                   src={cardData.find((card) => card.id === activeCard)?.image}
                   alt={cardData.find((card) => card.id === activeCard)?.title}
                   className="w-full h-[212px] object-cover rounded-md mb-4"
