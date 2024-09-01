@@ -80,7 +80,7 @@ const Navbar = () => {
             className="h-8"
           />
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 lg:hidden">
           <div className="relative lg:hidden">
             <img
               src="./globe-dark.png"
