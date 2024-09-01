@@ -72,27 +72,42 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="p-4 lg:pl-9 lg:px-6 lg:py-[19px] rounded-full w-full flex items-center justify-between relative bg-[#121316] border border-[#211F1F] text-[#F4F4F4] z-50">
+      <nav className="p-2 lg:pl-9 lg:px-6 lg:py-[19px] rounded-full w-full flex items-center justify-between relative bg-[#121316] border border-[#211F1F] text-[#F4F4F4] z-50">
         <div className="lg:hidden">
           <img
-            src="./juspaylogo.Boq8x2qu.svg"
+            src="./juspay-full-logo-dark-mode.svg"
             alt="juspay logo"
             className="h-8"
           />
         </div>
-        <button
-          onClick={() => setOpenMenu((prev) => !prev)}
-          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg focus:outline-none focus:ring-2 lg:hidden">
-          {!openMenu ? (
+        <div className="flex items-center gap-4">
+          <div className="relative lg:hidden">
             <img
-              src="./hamburger-icon.DmpCzxrL.svg"
-              alt="navbar"
-              className="h-8"
+              src="./globe-dark.png"
+              alt="globe"
+              className="w-10 h-10"
+              onClick={() => setOpenDropDown((prev) => !prev)}
             />
-          ) : (
-            <img src="./close-icon.c2i1fhZv.svg" alt="navbar" className="h-4" />
-          )}
-        </button>
+            {openDropDown ? <CountryDropDown /> : null}
+          </div>
+          <button
+            onClick={() => setOpenMenu((prev) => !prev)}
+            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg focus:outline-none focus:ring-2 lg:hidden">
+            {!openMenu ? (
+              <img
+                src="./hamburger-icon.DmpCzxrL.svg"
+                alt="navbar"
+                className="h-8"
+              />
+            ) : (
+              <img
+                src="./close-icon.c2i1fhZv.svg"
+                alt="navbar"
+                className="h-4"
+              />
+            )}
+          </button>
+        </div>
 
         <div className="hidden lg:flex items-center gap-[8px]">
           <motion.a
